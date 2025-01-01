@@ -1,0 +1,100 @@
+setfpscap(999)
+
+getgenv().Esp = {
+   ['Toggle'] = false,
+   ['Distance'] = false,
+   ['Name'] = false,
+   ['Tool'] = false,
+   ['HealthBar'] = false,
+   ['Skeleton'] = false,
+   ['Tracer'] = false,
+}
+
+local ESPLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mc4121ban/ESP-Library/refs/heads/main/library.lua"))()
+ESPLib.Toggle = getgenv().Esp['Toggle']
+ESPLib.Distance = getgenv().Esp['Distance']
+ESPLib.Name = getgenv().Esp['Name']
+ESPLib.Box = false
+ESPLib.Tool = getgenv().Esp['Tool']
+ESPLib.HealthBar = getgenv().Esp['HealthBar']
+ESPLib.Skeleton = getgenv().Esp['Skeleton']
+ESPLib.Tracer = getgenv().Esp['Tracer']
+
+--// V2 \\--
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zzzlua/library/refs/heads/main/Kzzhh"))()
+
+local Window = Library:Window({ Name = "Testing", Amount = 6 })
+Library:Watermark({Name = "$kzzhh$"})
+
+local Page = Window:Page({ Name = "Main", Weapons = true })
+local Rage = Window:Page({ Name = "Rage", Weapons = true })
+local Nigga = Window:Page({ Name = "Nigga", Weapons = true })
+local Players = Window:Page({ Name = "Players", Weapons = true })
+local Settings = Window:Page({ Name = "Settings", Weapons = true })
+
+local SubPage1 = Page:Weapon({ Icon = "rbxassetid://78117064682304" })
+local SubPage2 = Page:Weapon({ Icon = "rbxassetid://120304994615919" })
+local SubPage3 = Page:Weapon({ Icon = "rbxassetid://77469221937135" })
+local SubPage4 = Page:Weapon({ Icon = "rbxassetid://128385756502234" })
+local SubPage5 = Nigga:Weapon({Icon = "rbxassetid://114736089502081" })
+local SubPage6 = Rage:Weapon({Icon = "rbxassetid://114736089502081" })
+
+local Section = SubPage1:Section({ Name = "Esp (Test)", Side = "Left" })
+
+Players:PlayerList({})
+
+Section:Toggle({
+    Name = "Enabled", 
+    Callback = function(State)
+        getgenv().Esp['Toggle'] = State
+        ESPLib.Toggle = State
+    end
+})
+
+Section:Toggle({
+    Name = "Distance", 
+    Callback = function(State)
+        getgenv().Esp['Distance'] = State
+        ESPLib.Distance = State
+    end
+})
+
+Section:Toggle({
+    Name = "Name", 
+    Callback = function(State)
+        getgenv().Esp['Name'] = State
+        ESPLib.Name = State
+    end
+})
+
+Section:Toggle({
+    Name = "Tool", 
+    Callback = function(State)
+        getgenv().Esp['Tool'] = State
+        ESPLib.Tool = State
+    end
+})
+
+Section:Toggle({
+    Name = "HealthBar", 
+    Callback = function(State)
+        getgenv().Esp['HealthBar'] = State
+        ESPLib.HealthBar = State
+    end
+})
+
+Section:Toggle({
+    Name = "Skeleton", 
+    Callback = function(State)
+        getgenv().Esp['Skeleton'] = State
+        ESPLib.Skeleton = State
+    end
+})
+
+Section:Toggle({
+    Name = "Tracer", 
+    Callback = function(State)
+        getgenv().Esp['Tracer'] = State
+        ESPLib.Tracer = State
+    end
+})
